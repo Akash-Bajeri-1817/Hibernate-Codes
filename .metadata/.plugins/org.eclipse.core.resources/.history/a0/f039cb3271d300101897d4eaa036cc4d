@@ -1,0 +1,70 @@
+package com.tca;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class AddStudent 
+{
+
+	public static void main(String[] args) 
+	{
+		Connection con = null;
+		PreparedStatement ps = null;
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		final String DB_DRIVER = "org.postgresql.Driver";
+		final String DB_URL = "jdbc:postgresql://localhost/hibernate";
+		final String DB_USER = "root";
+		final String DB_PASS = "root";
+		
+		try
+		{
+			Class.forName(DB_DRIVER);
+			
+			con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+			
+			System.out.print("Enter the roll number : ");
+			int rollNumber = Integer.parseInt(br.readLine());
+			
+			System.out.print("Enter the name : ");
+			String name = br.readLine();
+			
+			System.out.print("Enter the percentage : ");
+			double percentage = Double.parseDouble(br.readLine());
+			
+			ps = con.prepareStatement("INSERT INTO STUDENT VALUES(?,?,?)");
+			ps.setInt(1, rollNumber);
+			ps.setString(2, name);
+			ps.setDouble(3, percentage);
+			
+			if( (ps.executeUpdate()) == 1 )
+				System.out.println("Record is Inserted Succesfully");
+			else
+				System.out.println("Failed to save record");
+		}
+		catch(Exception e)
+		{
+			System.out.println("======== Failed =========");
+			e.printStackTrace();
+		}
+		finally
+		{
+			System.out.println("============ Resources Closed =============");
+			try 
+			{
+				con.close();
+			} 
+			catch (SQLException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

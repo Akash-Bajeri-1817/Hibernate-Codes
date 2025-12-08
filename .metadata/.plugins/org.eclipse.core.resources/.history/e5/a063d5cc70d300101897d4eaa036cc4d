@@ -1,0 +1,12 @@
+package com.tca.util;
+
+import com.tca.entities.Student;
+
+public class StudentUtil 
+{
+	public static boolean addStudent(Student s)
+	{
+		
+	}
+
+}

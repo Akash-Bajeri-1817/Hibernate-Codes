@@ -1,0 +1,37 @@
+package com.tca;
+
+import java.util.List;
+
+import com.tca.entities.Student;
+import com.tca.util.StudentUtil;
+
+public class DisplayStudent {
+
+	public static void main(String[] args) 
+	{
+		try
+		{
+			List<Student> l = StudentUtil.fetAllRecotds();
+			
+			if(l.isEmpty())
+				System.out.println("No records exists !!!");
+			else
+			{
+				System.out.println("Student Information : ");
+				
+				for(Student ob : l)
+				{
+					System.out.println("Roll Number : "+ ob.getRollNumber());
+					System.out.println("Name        : "+ ob.getName());
+					System.out.println("Percentage  : "+ ob.getPercentage());
+				}
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}

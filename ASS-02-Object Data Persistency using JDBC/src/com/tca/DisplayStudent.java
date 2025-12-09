@@ -1,0 +1,50 @@
+package com.tca;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.tca.entities.Student;
+import com.tca.util.StudentUtil;
+
+public class DisplayStudent {
+
+	public static void main(String[] args) 
+	{
+		try
+		{
+			List<Student> l = StudentUtil.fetAllRecotds();
+			
+			if(l.isEmpty())
+				System.out.println("No records exists !!!");
+			else
+			{
+				System.out.println("Student Information : \n");
+				
+				for(Student ob : l)
+				{
+					System.out.println("Roll Number : "+ ob.getRollNumber());
+					System.out.println("Name        : "+ ob.getName());
+					System.out.println("Percentage  : "+ ob.getPercentage());
+					System.out.println("--------------------------------------------");
+				}
+			}
+		}
+		catch(SQLException se)
+		{
+			System.out.println("Failed to save record");
+		}
+		catch(ClassNotFoundException ce)
+		{
+			System.out.println("Fail to load class ");
+		}
+		catch(Exception e)
+		{
+			System.out.println("======== Failed =========");
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

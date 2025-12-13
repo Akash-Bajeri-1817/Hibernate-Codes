@@ -19,6 +19,6 @@
 		<property name="hibernate.hbm2ddl.auto">create</property>
 
 		<!-- Mapping file name -->
-		<mapping resource="student.hbm.xml" />
+		<mapping resource="teacher.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

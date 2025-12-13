@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.tca</groupId>
-	<artifactId>ASS-03-First-Maven-Project</artifactId>
+	<artifactId>ASS-04-Teacher</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>ASS-03-First-Maven-Project</name>
+	<name>ASS-04-Teacher</name>
 	<!-- FIXME change it to the project's website -->
-	<url>http://tca.com</url>
+	<url>http://www.example.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,8 +30,6 @@
 	</dependencyManagement>
 
 	<dependencies>
-
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -52,7 +50,6 @@
 			<artifactId>javassist</artifactId>
 			<version>3.12.1.GA</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>

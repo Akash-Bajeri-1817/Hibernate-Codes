@@ -7,11 +7,13 @@
 
 <hibernate-mapping>
 	<!-- To provide mapping between entity class and student -->
-	<class name="com.tca.entities.Student" table="student">
+	<class name="com.tca.ASS_04_Teacher.entities.Teacher"
+		table="teacher">
 
 		<!-- Mapping between fields and column name -->
-		<id name="rollNumber" column="RNO" />
-		<property name="name" column="NAME" />
-		<property name="percentage" column="PER" />
+		<id name="teacherId" column="TEACHER_ID" />
+		<property name="teacherName" column="TEACHER_NAME" />
+		<property name="salary" column="SALARY" />
+		<property name="city" column="CITY" />
 	</class>
 </hibernate-mapping>

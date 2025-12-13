@@ -21,7 +21,7 @@ public class StudentUtil
 		final String DB_DRIVER = "org.postgresql.Driver";
 		final String DB_URL = "jdbc:postgresql://localhost/hibernate";
 		final String DB_USER = "root";
-		final String DB_PASS = "Akash";
+		final String DB_PASS = "root";
 		
 		try
 		{
@@ -65,7 +65,7 @@ public class StudentUtil
 		final String DB_DRIVER = "org.postgresql.Driver";
 		final String DB_URL = "jdbc:postgresql://localhost/hibernate";
 		final String DB_USER = "root";
-		final String DB_PASS = "Akash";
+		final String DB_PASS = "root";
 		
 		try
 		{

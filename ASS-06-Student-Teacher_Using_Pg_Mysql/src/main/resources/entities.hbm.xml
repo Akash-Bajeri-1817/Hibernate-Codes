@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<!-- To provide mapping between entity class and student -->
+	<class name="com.tca.entities.Student" table="Student">
+		<!-- Mapping between fields and column name -->
+		<id name="rollNumber" column="ROLL_NUMBER" />
+		<property name="name" column="NAME" />
+		<property name="percentage" column="PERCENTAGE" />
+	</class>
+
+	<class name="com.tca.entities.Teacher" table="Teacher">
+		<!-- Mapping between fields and column name -->
+		<id name="teacherId" column="TEACHER_ID" />
+		<property name="name" column="NAME" />
+		<property name="salary" column="SALARY" />
+	</class>
+</hibernate-mapping>

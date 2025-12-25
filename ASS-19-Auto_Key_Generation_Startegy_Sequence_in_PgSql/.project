@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ASS-19-Auto_Key_Generation_Startegy_Identity_in_PgSql</name>
+	<name>ASS-19-Auto_Key_Generation_Startegy_Sequence_in_PgSql</name>
 	<comment></comment>
 	<projects>
 	</projects>

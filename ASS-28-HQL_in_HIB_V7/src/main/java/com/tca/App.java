@@ -1,6 +1,7 @@
 package com.tca;
 
 import java.util.List;
+import java.util.Scanner;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -189,7 +190,7 @@ public class App
 		int rowCount = query.executeUpdate();
 		System.out.println("No. of Recrods Updated : " + rowCount);
     	*/
-    	
+    /*	
     	// DELETE
 		
 		Query<?> query = session.createQuery("DELETE FROM Student WHERE city = :tempcity ");
@@ -197,8 +198,36 @@ public class App
 		
 		int rowCount = query.executeUpdate();
 		System.out.println("No. of Recrods Deleted : " + rowCount);
+		*/
+    	
+    	 /**************** PAGINATION ****************************/
 		
+		Scanner sc = new Scanner(System.in);
+		
+		Query<Student> query = session.createQuery("FROM Student", Student.class);
+		query.setMaxResults(3);  // We can fetch 3 records from Result Set
+		
+		            
+		for(int i=0;i<10; i = i+3)
+		{
+			query.setFirstResult(i);
+			
+			List<Student> L = query.list();
+			
+			for(Student s : L)
+    		{
+    			System.out.println("Roll Number : " + s.getRno());
+    			System.out.println("Name        : " + s.getName());
+    			System.out.println("Percentage  : " + s.getPercentage());
+    			System.out.println("City        : " + s.getCity());
+    			System.out.println("-----------------------------------------");
+    		}
+			
+			System.out.println("Press Any key to Coninuer.....");
+			sc.next();
+		}
     	transaction.commit();
+    	sc.close();
 	}
     catch (Exception e)
 	{

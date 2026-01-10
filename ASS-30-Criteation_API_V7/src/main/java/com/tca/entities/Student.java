@@ -13,6 +13,16 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "student")
+@FilterDefs({
+	@FilterDef(name = "cityfilter", parameters = @ParamDef(name = "tca", type = String.class)),
+	@FilterDef(name = "perfilter", parameters = @ParamDef(name = "akash", type = Float.class))
+})
+
+@Filters({
+	@Filter(name = "cityfilter", condition = "scity = :tca"),
+	@Filter(name = "perfilter", condition = "sper >= :akash")
+})
+
 public class Student
 {
 	@Id
